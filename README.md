@@ -6,31 +6,47 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Designer Nest | Interior Design</title>
+<title>Designer Nest | Luxury Interior Studio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 
 <style>
 
-body{
+*{
 margin:0;
-font-family:'Poppins',sans-serif;
-background:#111;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Poppins;
 color:white;
+background:url("https://www.transparenttextures.com/patterns/wood-pattern.png");
 }
 
 /* NAVBAR */
 
 nav{
+position:fixed;
+top:0;
+width:100%;
 display:flex;
 justify-content:space-between;
 padding:20px 60px;
-background:black;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
 
 nav h2{
+font-family:"Playfair Display";
 color:#d4af37;
-font-family:'Playfair Display';
 }
 
 nav a{
@@ -42,8 +58,8 @@ text-decoration:none;
 /* HERO */
 
 .hero{
-height:80vh;
-background:url("https://images.unsplash.com/photo-1600210492493-0946911123ea") center/cover;
+height:100vh;
+background:url("https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg") center/cover;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -51,96 +67,142 @@ text-align:center;
 }
 
 .hero h1{
-font-size:50px;
-background:rgba(0,0,0,0.6);
-padding:20px;
-border-radius:10px;
-}
-
-/* SECTION */
-
-.section{
-padding:70px 40px;
-}
-
-.section h2{
-text-align:center;
+font-size:70px;
+font-family:"Playfair Display";
 color:#d4af37;
-font-family:'Playfair Display';
+}
+
+.hero button{
+margin-top:20px;
+padding:15px 35px;
+border:none;
+background:#d4af37;
+border-radius:30px;
+cursor:pointer;
+}
+
+/* GLASS SECTIONS */
+
+.glass{
+margin:80px;
+padding:60px;
+background:rgba(0,0,0,0.6);
+border-radius:20px;
+}
+
+/* TITLE */
+
+.section-title{
+text-align:center;
+font-family:"Playfair Display";
 font-size:40px;
+color:#d4af37;
 margin-bottom:40px;
 }
 
-/* GRID GALLERY */
+/* GALLERY */
 
-.grid-gallery{
+.gallery{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-grid-auto-rows:200px;
-gap:20px;
+gap:25px;
 }
 
-.grid-gallery img{
+.gallery img{
 width:100%;
-height:100%;
+height:300px;
 object-fit:cover;
+border-radius:12px;
+transition:0.5s;
+}
+
+.gallery img:hover{
+transform:scale(1.1);
+box-shadow:0 20px 40px rgba(212,175,55,0.7);
+}
+
+/* PARALLAX */
+
+.showcase{
+height:70vh;
+background:url("https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg") center/cover fixed;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.showcase h2{
+font-size:50px;
+background:rgba(0,0,0,0.7);
+padding:20px 40px;
 border-radius:10px;
-transition:0.4s;
-}
-
-.grid-gallery img:hover{
-transform:scale(1.05);
-}
-
-/* BIG IMAGE */
-
-.big{
-grid-row:span 2;
 }
 
 /* BHK */
 
 .bhk{
 display:flex;
-justify-content:center;
 flex-wrap:wrap;
-gap:25px;
+justify-content:center;
+gap:30px;
 }
 
 .bhk-card{
-background:#1b1b1b;
-padding:30px;
-border-radius:10px;
 width:220px;
+padding:30px;
+background:#222;
+border-radius:12px;
 text-align:center;
+transition:0.4s;
+}
+
+.bhk-card:hover{
+transform:translateY(-10px);
+background:#333;
 }
 
 /* CONTACT */
 
 .contact{
 text-align:center;
-padding:60px;
+padding:80px 20px;
 }
 
-input,textarea{
+.contact input,
+.contact textarea{
 width:80%;
-padding:12px;
+padding:14px;
 margin:10px;
 border:none;
-border-radius:6px;
+border-radius:8px;
 }
 
-button{
-background:#d4af37;
+.contact button{
+padding:14px 40px;
 border:none;
-padding:12px 30px;
+background:#d4af37;
 cursor:pointer;
 }
 
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+padding:15px 18px;
+border-radius:50%;
+text-decoration:none;
+}
+
+/* FOOTER */
+
 footer{
 text-align:center;
+padding:30px;
 background:black;
-padding:20px;
 }
 
 </style>
@@ -154,137 +216,116 @@ padding:20px;
 <h2>Designer Nest</h2>
 
 <div>
-
 <a href="#kitchen">Kitchen</a>
 <a href="#bedroom">Bedroom</a>
 <a href="#living">Living</a>
 <a href="#contact">Book</a>
-
 </div>
 
 </nav>
 
 <section class="hero">
 
-<h1>Luxury Interior Design in South Kolkata</h1>
+<div data-aos="fade-up">
 
-</section>
+<h1>Luxury Interior Design</h1>
 
-<!-- KITCHEN -->
-
-<section class="section" id="kitchen">
-
-<h2>Kitchen Designs</h2>
-
-<div class="grid-gallery">
-
-<img class="big" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
-
-<img src="https://images.unsplash.com/photo-1556911220-bff31c812dba">
-
-<img src="https://images.unsplash.com/photo-1600607687644-c7f34a32d9a7">
-
-<img class="big" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea">
-
-<img src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77">
-
-<img src="https://images.unsplash.com/photo-1556912998-c57cc6b63cd7">
+<button>Book Consultation</button>
 
 </div>
 
 </section>
 
-<!-- BEDROOM -->
+<div class="glass">
 
-<section class="section" id="bedroom">
+<h2 class="section-title">About Designer Nest</h2>
 
-<h2>Bedroom Designs</h2>
-
-<div class="grid-gallery">
-
-<img class="big" src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0">
-
-<img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf">
-
-<img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2">
-
-<img class="big" src="https://images.unsplash.com/photo-1600607687126-c8d6b2e8c4c5">
-
-<img src="https://images.unsplash.com/photo-1616047006789-b7afc8c4b3c2">
-
-<img src="https://images.unsplash.com/photo-1560448075-bb485b067938">
+<p style="text-align:center">
+15+ years of experience creating premium interiors across South Kolkata and West Bengal.
+</p>
 
 </div>
 
-</section>
+<div class="glass" id="kitchen">
 
-<!-- LIVING ROOM -->
+<h2 class="section-title">Kitchen Interiors</h2>
 
-<section class="section" id="living">
+<div class="gallery">
 
-<h2>Living Room Designs</h2>
-
-<div class="grid-gallery">
-
-<img class="big" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6">
-
-<img src="https://images.unsplash.com/photo-1615873968403-89e068629265">
-
-<img src="https://images.unsplash.com/photo-1600210492493-0946911123ea">
-
-<img class="big" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d">
-
-<img src="https://images.unsplash.com/photo-1617806118233-18e1de247200">
-
-<img src="https://images.unsplash.com/photo-1617806118242-50d6a6d8d2f1">
+<img src="https://images.pexels.com/photos/1599791/pexels-photo-1599791.jpeg" data-aos="zoom-in">
+<img src="https://images.pexels.com/photos/2062431/pexels-photo-2062431.jpeg" data-aos="zoom-in">
+<img src="https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg" data-aos="zoom-in">
 
 </div>
 
+</div>
+
+<div class="glass" id="bedroom">
+
+<h2 class="section-title">Bedroom Interiors</h2>
+
+<div class="gallery">
+
+<img src="https://images.pexels.com/photos/1648768/pexels-photo-1648768.jpeg" data-aos="fade-right">
+<img src="https://images.pexels.com/photos/271743/pexels-photo-271743.jpeg" data-aos="fade-right">
+<img src="https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg" data-aos="fade-right">
+
+</div>
+
+</div>
+
+<div class="glass" id="living">
+
+<h2 class="section-title">Living Room Interiors</h2>
+
+<div class="gallery">
+
+<img src="https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg" data-aos="zoom-in">
+<img src="https://images.pexels.com/photos/1866149/pexels-photo-1866149.jpeg" data-aos="zoom-in">
+<img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg" data-aos="zoom-in">
+
+</div>
+
+</div>
+
+<section class="showcase">
+
+<h2 data-aos="fade-up">Elegant Living Spaces</h2>
+
 </section>
 
-<!-- BHK -->
+<div class="glass">
 
-<section class="section">
-
-<h2>BHK Interior Packages</h2>
+<h2 class="section-title">BHK Packages</h2>
 
 <div class="bhk">
 
-<div class="bhk-card">
+<div class="bhk-card" data-aos="flip-left">
 <h3>1 BHK</h3>
-<p>Compact luxury design</p>
 </div>
 
-<div class="bhk-card">
+<div class="bhk-card" data-aos="flip-left">
 <h3>2 BHK</h3>
-<p>Modern family interiors</p>
 </div>
 
-<div class="bhk-card">
+<div class="bhk-card" data-aos="flip-left">
 <h3>3 BHK</h3>
-<p>Premium luxury design</p>
 </div>
 
-<div class="bhk-card">
+<div class="bhk-card" data-aos="flip-left">
 <h3>Villa</h3>
-<p>Complete luxury interior</p>
 </div>
 
 </div>
 
-</section>
-
-<!-- CONTACT -->
+</div>
 
 <section class="contact" id="contact">
 
-<h2>Book Appointment</h2>
+<h2 class="section-title">Book Consultation</h2>
 
 <p>📞 9330682272</p>
-
 <p>📍 South Kolkata, West Bengal</p>
-
-<form>
 
 <input type="text" placeholder="Your Name">
 
@@ -298,17 +339,26 @@ padding:20px;
 
 <br>
 
-<button>Book Now</button>
-
-</form>
+<button>Book Appointment</button>
 
 </section>
 
 <footer>
 
-<p>© Designer Nest Interior Studio</p>
+<p>© 2026 Designer Nest Interior Studio</p>
 
 </footer>
+
+<a class="whatsapp" href="https://wa.me/919330682272">WhatsApp</a>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+AOS.init({
+duration:1200,
+once:true
+});
+</script>
 
 </body>
 
