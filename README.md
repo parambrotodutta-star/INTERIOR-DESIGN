@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
@@ -9,12 +10,15 @@
 
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 
 body{
 margin:0;
-font-family: 'Poppins', sans-serif;
-background:#f5f5f5;
+font-family:'Poppins',sans-serif;
+background:#0f0f0f;
+color:white;
 }
 
 /* NAVBAR */
@@ -22,43 +26,113 @@ background:#f5f5f5;
 nav{
 display:flex;
 justify-content:space-between;
-padding:20px 60px;
-background:#111;
-color:white;
+align-items:center;
+padding:20px 70px;
+background:black;
 position:sticky;
 top:0;
+z-index:100;
+}
+
+nav h2{
+font-family:'Playfair Display';
+color:#d4af37;
 }
 
 nav a{
 color:white;
-text-decoration:none;
 margin-left:20px;
+text-decoration:none;
 }
 
 /* HERO */
 
 .hero{
-height:90vh;
+height:100vh;
 background:url("https://images.unsplash.com/photo-1600210492493-0946911123ea") center/cover;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-color:white;
+position:relative;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
 }
 
 .hero h1{
-font-size:55px;
-background:rgba(0,0,0,0.5);
-padding:20px 40px;
-border-radius:10px;
+position:relative;
+font-size:60px;
+font-family:'Playfair Display';
+color:#d4af37;
+}
+
+/* FLOATING 3D SHAPES */
+
+.shape{
+position:absolute;
+width:120px;
+height:120px;
+background:linear-gradient(135deg,#d4af37,#b8962e);
+border-radius:50%;
+filter:blur(40px);
+animation:float 8s infinite ease-in-out;
+}
+
+.shape2{
+top:200px;
+right:100px;
+animation-delay:3s;
+}
+
+.shape1{
+top:120px;
+left:80px;
+}
+
+@keyframes float{
+
+0%{transform:translateY(0)}
+50%{transform:translateY(-40px)}
+100%{transform:translateY(0)}
+
 }
 
 /* ABOUT */
 
 .about{
-padding:70px;
+padding:80px;
 text-align:center;
+}
+
+.about h2{
+color:#d4af37;
+font-family:'Playfair Display';
+}
+
+/* STATS */
+
+.stats{
+display:flex;
+justify-content:center;
+gap:60px;
+padding:40px;
+}
+
+.stat{
+text-align:center;
+}
+
+.stat h3{
+font-size:40px;
+color:#d4af37;
 }
 
 /* SERVICES */
@@ -66,20 +140,20 @@ text-align:center;
 .services{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-padding:60px;
+gap:30px;
+padding:80px;
 }
 
-.service{
-background:white;
+.card{
+background:#1b1b1b;
 padding:25px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-transition:0.3s;
+border-radius:12px;
+transition:0.4s;
 }
 
-.service:hover{
+.card:hover{
 transform:translateY(-10px);
+box-shadow:0 10px 30px rgba(212,175,55,0.3);
 }
 
 /* GALLERY */
@@ -88,7 +162,7 @@ transform:translateY(-10px);
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:20px;
-padding:60px;
+padding:80px;
 }
 
 .gallery img{
@@ -106,23 +180,23 @@ transform:scale(1.05);
 .accordion{
 max-width:700px;
 margin:auto;
+padding:40px;
 }
 
 .accordion button{
 width:100%;
 padding:15px;
+background:#d4af37;
 border:none;
-text-align:left;
+color:black;
 font-size:18px;
-background:#111;
-color:white;
 margin-top:10px;
 cursor:pointer;
 }
 
 .panel{
 display:none;
-background:white;
+background:#222;
 padding:15px;
 }
 
@@ -130,33 +204,33 @@ padding:15px;
 
 .contact{
 background:#111;
-color:white;
-padding:60px;
+padding:80px;
 text-align:center;
 }
 
 input,textarea{
-width:90%;
+width:80%;
 padding:12px;
 margin:10px;
-border-radius:6px;
 border:none;
+border-radius:6px;
 }
 
-button.submit{
-background:#c9a74d;
-color:white;
-padding:12px 25px;
+.submit{
+background:#d4af37;
+color:black;
+padding:12px 30px;
 border:none;
-border-radius:6px;
 cursor:pointer;
 }
 
+/* FOOTER */
+
 footer{
-background:#000;
-color:white;
+background:black;
 text-align:center;
 padding:20px;
+color:#999;
 }
 
 </style>
@@ -172,13 +246,16 @@ padding:20px;
 <div>
 <a href="#">Home</a>
 <a href="#about">About</a>
-<a href="#portfolio">Portfolio</a>
+<a href="#portfolio">Projects</a>
 <a href="#contact">Book Now</a>
 </div>
 
 </nav>
 
 <section class="hero">
+
+<div class="shape shape1"></div>
+<div class="shape shape2"></div>
 
 <h1 data-aos="fade-up">Luxury Interior Design in Kolkata</h1>
 
@@ -190,34 +267,53 @@ padding:20px;
 
 <p>
 Designer Nest is a premium interior design studio in Kolkata with
-<strong>15+ years of experience</strong> creating elegant residential
+<strong>15+ years experience</strong> delivering elegant residential
 and commercial interiors.
 </p>
 
 </section>
 
+<div class="stats">
+
+<div class="stat">
+<h3>15+</h3>
+<p>Years Experience</p>
+</div>
+
+<div class="stat">
+<h3>250+</h3>
+<p>Projects Completed</p>
+</div>
+
+<div class="stat">
+<h3>120+</h3>
+<p>Happy Clients</p>
+</div>
+
+</div>
+
 <section class="services">
 
-<div class="service" data-aos="zoom-in">
-<h3>Home Interiors</h3>
-<p>Luxury living spaces tailored to your lifestyle.</p>
+<div class="card" data-aos="zoom-in">
+<h3>Luxury Home Interiors</h3>
+<p>Modern elegant home designs.</p>
 </div>
 
-<div class="service" data-aos="zoom-in">
-<h3>Office Design</h3>
-<p>Professional and creative workspaces.</p>
+<div class="card" data-aos="zoom-in">
+<h3>Office Interiors</h3>
+<p>Creative workspace environments.</p>
 </div>
 
-<div class="service" data-aos="zoom-in">
+<div class="card" data-aos="zoom-in">
 <h3>Renovation</h3>
-<p>Modern transformation for existing homes.</p>
+<p>Transform old spaces into modern ones.</p>
 </div>
 
 </section>
 
 <section id="portfolio">
 
-<h2 style="text-align:center">Our Work</h2>
+<h2 style="text-align:center;color:#d4af37">Our Projects</h2>
 
 <div class="gallery">
 
@@ -225,33 +321,29 @@ and commercial interiors.
 <img src="https://images.unsplash.com/photo-1615873968403-89e068629265">
 <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0">
 <img src="https://images.unsplash.com/photo-1616047006789-b7afc8c4b3c2">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+<img src="https://images.unsplash.com/photo-1600210492493-0946911123ea">
 
 </div>
 
 </section>
 
-<section>
+<section class="accordion">
 
-<h2 style="text-align:center">Why Choose Us</h2>
+<button>Why Choose Designer Nest?</button>
+<div class="panel">We provide premium customized interior solutions.</div>
 
-<div class="accordion">
+<button>What type of projects do you handle?</button>
+<div class="panel">Residential homes, offices, and luxury renovations.</div>
 
-<button>15+ Years Experience</button>
-<div class="panel">We have delivered premium interiors across Kolkata.</div>
-
-<button>Customized Design</button>
-<div class="panel">Every project is tailored to the client's vision.</div>
-
-<button>Premium Materials</button>
-<div class="panel">We use high-quality and durable materials.</div>
-
-</div>
+<button>How to start a project?</button>
+<div class="panel">Book a consultation below to discuss your project.</div>
 
 </section>
 
 <section class="contact" id="contact">
 
-<h2>Book Consultation</h2>
+<h2 style="color:#d4af37">Book Consultation</h2>
 
 <form>
 
@@ -262,6 +354,8 @@ and commercial interiors.
 <input type="tel" placeholder="Phone Number">
 
 <textarea rows="4" placeholder="Tell us about your project"></textarea>
+
+<br>
 
 <button class="submit">Book Appointment</button>
 
@@ -278,18 +372,25 @@ and commercial interiors.
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
 <script>
+
 AOS.init();
 
 var acc=document.getElementsByTagName("button");
 
 for(let i=0;i<acc.length;i++){
+
 acc[i].onclick=function(){
-this.classList.toggle("active");
+
 var panel=this.nextElementSibling;
+
 panel.style.display=panel.style.display==="block"?"none":"block";
+
 }
+
 }
+
 </script>
 
 </body>
+
 </html>
