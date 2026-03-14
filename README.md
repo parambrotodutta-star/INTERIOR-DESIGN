@@ -1,396 +1,132 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Designer Nest | Interior Design Studio</title>
-
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
-body{
-margin:0;
-font-family:'Poppins',sans-serif;
-background:#0f0f0f;
-color:white;
+/* SECTION STYLE */
+
+.section{
+padding:80px 40px;
 }
 
-/* NAVBAR */
-
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 70px;
-background:black;
-position:sticky;
-top:0;
-z-index:100;
-}
-
-nav h2{
-font-family:'Playfair Display';
-color:#d4af37;
-}
-
-nav a{
-color:white;
-margin-left:20px;
-text-decoration:none;
-}
-
-/* HERO */
-
-.hero{
-height:100vh;
-background:url("https://images.unsplash.com/photo-1600210492493-0946911123ea") center/cover;
-display:flex;
-align-items:center;
-justify-content:center;
+.section h2{
 text-align:center;
-position:relative;
+font-size:42px;
+color:#d4af37;
+font-family:'Playfair Display';
+margin-bottom:40px;
 }
 
-.hero::after{
-content:"";
-position:absolute;
-top:0;
-left:0;
+/* GRID GALLERY */
+
+.grid-gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-auto-rows:200px;
+gap:20px;
+}
+
+.grid-gallery img{
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.6);
-}
-
-.hero h1{
-position:relative;
-font-size:60px;
-font-family:'Playfair Display';
-color:#d4af37;
-}
-
-/* FLOATING 3D SHAPES */
-
-.shape{
-position:absolute;
-width:120px;
-height:120px;
-background:linear-gradient(135deg,#d4af37,#b8962e);
-border-radius:50%;
-filter:blur(40px);
-animation:float 8s infinite ease-in-out;
-}
-
-.shape2{
-top:200px;
-right:100px;
-animation-delay:3s;
-}
-
-.shape1{
-top:120px;
-left:80px;
-}
-
-@keyframes float{
-
-0%{transform:translateY(0)}
-50%{transform:translateY(-40px)}
-100%{transform:translateY(0)}
-
-}
-
-/* ABOUT */
-
-.about{
-padding:80px;
-text-align:center;
-}
-
-.about h2{
-color:#d4af37;
-font-family:'Playfair Display';
-}
-
-/* STATS */
-
-.stats{
-display:flex;
-justify-content:center;
-gap:60px;
-padding:40px;
-}
-
-.stat{
-text-align:center;
-}
-
-.stat h3{
-font-size:40px;
-color:#d4af37;
-}
-
-/* SERVICES */
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-padding:80px;
-}
-
-.card{
-background:#1b1b1b;
-padding:25px;
+object-fit:cover;
 border-radius:12px;
 transition:0.4s;
 }
 
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 10px 30px rgba(212,175,55,0.3);
-}
-
-/* GALLERY */
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-padding:80px;
-}
-
-.gallery img{
-width:100%;
-border-radius:10px;
-transition:0.4s;
-}
-
-.gallery img:hover{
+.grid-gallery img:hover{
 transform:scale(1.05);
 }
 
-/* ACCORDION */
+/* LARGE IMAGE */
 
-.accordion{
-max-width:700px;
-margin:auto;
-padding:40px;
-}
-
-.accordion button{
-width:100%;
-padding:15px;
-background:#d4af37;
-border:none;
-color:black;
-font-size:18px;
-margin-top:10px;
-cursor:pointer;
-}
-
-.panel{
-display:none;
-background:#222;
-padding:15px;
-}
-
-/* CONTACT */
-
-.contact{
-background:#111;
-padding:80px;
-text-align:center;
-}
-
-input,textarea{
-width:80%;
-padding:12px;
-margin:10px;
-border:none;
-border-radius:6px;
-}
-
-.submit{
-background:#d4af37;
-color:black;
-padding:12px 30px;
-border:none;
-cursor:pointer;
-}
-
-/* FOOTER */
-
-footer{
-background:black;
-text-align:center;
-padding:20px;
-color:#999;
+.big{
+grid-row:span 2;
 }
 
 </style>
+<section class="section" id="kitchen">
 
-</head>
+<h2>Luxury Kitchen Designs</h2>
 
-<body>
+<div class="grid-gallery">
 
-<nav>
+<img class="big" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
 
-<h2>Designer Nest</h2>
+<img src="https://images.unsplash.com/photo-1556911220-bff31c812dba">
 
-<div>
-<a href="#">Home</a>
-<a href="#about">About</a>
-<a href="#portfolio">Projects</a>
-<a href="#contact">Book Now</a>
-</div>
+<img src="https://images.unsplash.com/photo-1600607687644-c7f34a32d9a7">
 
-</nav>
+<img class="big" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea">
 
-<section class="hero">
+<img src="https://images.unsplash.com/photo-1556912998-c57cc6b63cd7">
 
-<div class="shape shape1"></div>
-<div class="shape shape2"></div>
+<img src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77">
 
-<h1 data-aos="fade-up">Luxury Interior Design in Kolkata</h1>
-
-</section>
-
-<section class="about" id="about" data-aos="fade-up">
-
-<h2>About Designer Nest</h2>
-
-<p>
-Designer Nest is a premium interior design studio in Kolkata with
-<strong>15+ years experience</strong> delivering elegant residential
-and commercial interiors.
-</p>
-
-</section>
-
-<div class="stats">
-
-<div class="stat">
-<h3>15+</h3>
-<p>Years Experience</p>
-</div>
-
-<div class="stat">
-<h3>250+</h3>
-<p>Projects Completed</p>
-</div>
-
-<div class="stat">
-<h3>120+</h3>
-<p>Happy Clients</p>
-</div>
-
-</div>
-
-<section class="services">
-
-<div class="card" data-aos="zoom-in">
-<h3>Luxury Home Interiors</h3>
-<p>Modern elegant home designs.</p>
-</div>
-
-<div class="card" data-aos="zoom-in">
-<h3>Office Interiors</h3>
-<p>Creative workspace environments.</p>
-</div>
-
-<div class="card" data-aos="zoom-in">
-<h3>Renovation</h3>
-<p>Transform old spaces into modern ones.</p>
 </div>
 
 </section>
 
-<section id="portfolio">
+<section class="section" id="bedroom">
 
-<h2 style="text-align:center;color:#d4af37">Our Projects</h2>
+<h2>Elegant Bedroom Designs</h2>
 
-<div class="gallery">
+<div class="grid-gallery">
 
-<img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6">
-<img src="https://images.unsplash.com/photo-1615873968403-89e068629265">
-<img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0">
+<img class="big" src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0">
+
+<img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf">
+
+<img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2">
+
+<img class="big" src="https://images.unsplash.com/photo-1600607687126-c8d6b2e8c4c5">
+
 <img src="https://images.unsplash.com/photo-1616047006789-b7afc8c4b3c2">
-<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+
+<img src="https://images.unsplash.com/photo-1560448075-bb485b067938">
+
+</div>
+
+</section>
+
+<section class="section" id="living">
+
+<h2>Luxury Living Rooms</h2>
+
+<div class="grid-gallery">
+
+<img class="big" src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6">
+
+<img src="https://images.unsplash.com/photo-1615873968403-89e068629265">
+
 <img src="https://images.unsplash.com/photo-1600210492493-0946911123ea">
 
+<img class="big" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d">
+
+<img src="https://images.unsplash.com/photo-1617806118233-18e1de247200">
+
+<img src="https://images.unsplash.com/photo-1617806118242-50d6a6d8d2f1">
+
 </div>
 
 </section>
 
-<section class="accordion">
+<section class="section">
 
-<button>Why Choose Designer Nest?</button>
-<div class="panel">We provide premium customized interior solutions.</div>
+<h2>Dining Area Designs</h2>
 
-<button>What type of projects do you handle?</button>
-<div class="panel">Residential homes, offices, and luxury renovations.</div>
+<div class="grid-gallery">
 
-<button>How to start a project?</button>
-<div class="panel">Book a consultation below to discuss your project.</div>
+<img class="big" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c">
 
-</section>
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85">
 
-<section class="contact" id="contact">
+<img src="https://images.unsplash.com/photo-1556912167-f556f1f39fdf">
 
-<h2 style="color:#d4af37">Book Consultation</h2>
+<img class="big" src="https://images.unsplash.com/photo-1617806118233-18e1de247200">
 
-<form>
+<img src="https://images.unsplash.com/photo-1560448075-bb485b067938">
 
-<input type="text" placeholder="Your Name">
+<img src="https://images.unsplash.com/photo-1600607687644-c7f34a32d9a7">
 
-<input type="email" placeholder="Email">
-
-<input type="tel" placeholder="Phone Number">
-
-<textarea rows="4" placeholder="Tell us about your project"></textarea>
-
-<br>
-
-<button class="submit">Book Appointment</button>
-
-</form>
+</div>
 
 </section>
-
-<footer>
-
-<p>© 2026 Designer Nest | Interior Design Studio</p>
-
-</footer>
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-<script>
-
-AOS.init();
-
-var acc=document.getElementsByTagName("button");
-
-for(let i=0;i<acc.length;i++){
-
-acc[i].onclick=function(){
-
-var panel=this.nextElementSibling;
-
-panel.style.display=panel.style.display==="block"?"none":"block";
-
-}
-
-}
-
-</script>
-
-</body>
-
-</html>
